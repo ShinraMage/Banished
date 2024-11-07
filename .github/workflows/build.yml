@@ -16,13 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'  # Use the latest available Python version
-
-      - name: Install dependencies
-        run: pip install --no-cache-dir -r requirements.txt
+      - name: Install Pandoc
+        run: sudo apt-get install -y pandoc
 
       - name: Convert README.md to index.html
         run: pandoc README.md -o index.html  # Converts README.md to index.html
