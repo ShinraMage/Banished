@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pip install --no-cache-dir -r requirements.txt
 
+      - name: Convert README.md to index.html
+        run: pandoc README.md -o index.html  # Converts README.md to index.html
+
       - name: Copy to _site directory
         run: cp index.html _site/  # Copy index.html to _site directory
 
